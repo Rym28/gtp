@@ -1,3 +1,16 @@
+name: Voting App CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+env:
+  REGISTRY: docker.io
+  IMAGE_TAG: ${{ github.sha }}
+
 jobs:
   build-test:
     name: Build and Test Voting App
